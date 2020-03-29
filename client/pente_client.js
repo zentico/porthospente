@@ -1,6 +1,6 @@
 var DEBUG = true;
 var GAMECODE = null;
-var socket = io.connect('http://localhost:3000');
+var socket = io();
 
 function log(text){
 	if(DEBUG){

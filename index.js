@@ -20,6 +20,10 @@ app.get('/reset.css', function(req, res) {
   res.sendFile(__dirname + '/client/reset.css')
 })
 
+app.get('/favicon.ico', function(req, res) {
+  res.sendFile(__dirname + '/client/favicon.ico')
+})
+
 app.get('/fonts/:fm/:ft', function(req, res) {
   res.sendFile(__dirname + '/client/fonts/' + req.params.fm + '/' + req.params.ft)
 })
