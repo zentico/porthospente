@@ -1,18 +1,21 @@
 {
   "name": "RealTimeChat",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": "12.x"
   },
-  "description": "Real time web chat using nodeJS, socket.io",
-  "dependencies": {
-    "express": "latest",
-    "jade": "latest",
-    "mongodb": "latest",
-    "socket.io": "latest"
-  },
-  "author": "aman",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+    "jade": "^1.11.0",
+    "mongodb": "^3.5.5",
+  }
 }
