@@ -11,12 +11,12 @@ const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 const io = socketIo(server);
 const clients = {};
 
-app.use(express.static(__dirname + "/../client/"));
-app.use(express.static(__dirname + "/../node_modules/"));
+app.use(express.static(__dirname + "client/"));
+app.use(express.static(__dirname + "node_modules/"));
 
 app.get("/", (req, res) => {
-  // res.sendFile("index.html", { root: __dirname + "/../client" });
-  const stream = fs.createReadStream(__dirname + "/../client/index.html");
+  // res.sendFile("index.html", { root: __dirname + "client" });
+  const stream = fs.createReadStream(__dirname + "client/index.html");
   stream.pipe(res);
 });
 
