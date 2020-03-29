@@ -1,12 +1,21 @@
 {
-  "name": "socket-chat-example",
-  "version": "0.0.1",
-  "description": "my first socket.io app",
-  "dependencies": {
-    "express": "^4.15.2",
-    "socket.io": "^1.7.3"
-  },
+  "name": "socket.io-whiteboard",
+  "version": "1.0.0",
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "socket.io",
+    "websockets",
+    "whiteboard",
+    "example"
+  ],
   "scripts": {
     "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "randomcolor": "^0.4.4",
+    "socket.io": "^1.7.2"
   }
 }

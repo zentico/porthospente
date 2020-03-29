@@ -1,18 +1,31 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
+const http = require('http')
+const express = require('express')
+const socketIO = require('socket.io')
+const path = require('path')
+const randomColor = require('randomcolor')
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+const PORT = process.env.PORT || 5000
+const INDEX = path.resolve(__dirname, '../index.html')
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+const app = express()
+const server = http.createServer(app)
+const io = socketIO(server)
+const brushes = []
 
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+app.get('/', (req, res) => res.sendFile(INDEX))
+
+io.on('connection', (socket) => {
+  let brush = { color: randomColor({ luminosity: 'bright' }), strokes: [] }
+  brushes.push(brush)
+
+  socket.on('strokes', (strokes) => {
+    brush.strokes.push(...strokes)
+    io.emit('paint', brush.color, strokes)
+  })
+
+  socket.on('refresh', () => {
+    brushes.forEach(b => socket.emit('paint', b.color, b.strokes))
+  })
+})
+
+server.listen(PORT, () => console.log(`Listening on ${PORT}`))
