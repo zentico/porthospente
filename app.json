@@ -1,22 +1,8 @@
 {
-  "name": "Socket-Chat-Example",
-  "description": "my first socket.io app",
-  "website": "https://github.com/socketio/chat-example",
-  "repository": "https://github.com/socketio/chat-example",
-  "logo": "https://node-js-sample.herokuapp.com/node.svg",
-  "success_url": "/",
-  "keywords": [
-    "node",
-    "express",
-    "socket.io",
-    "realtime",
-    "websocket"
-  ],
-  "scripts": {
-  },
-  "addons": [
-  ],
-  "env": {
-    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs"
-  }
+  "name": "Start on Heroku: Node.js",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
 }

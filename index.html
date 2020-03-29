@@ -1,67 +1,37 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.io Whiteboard</title>
+    <title>Socket.IO chat</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
     </style>
   </head>
   <body>
-    <canvas id='painting'></canvas>
-    <script src='/socket.io/socket.io.js'></script>
-    <script>
-      var socket = io()
-      var painting = document.getElementById('painting')
-      var ctx = painting.getContext('2d')
-      var strokes = []
-      var brush = { down: false, x: 0, y: 0 }
-      var resizeTimer = undefined
-
-      painting.addEventListener('mousedown', (e) => {
-        Object.assign(brush, { down: true, x: e.clientX, y: e.clientY})
-      })
-      painting.addEventListener('mouseup', (e) => {
-        Object.assign(brush, { down: false })
-      })
-      painting.addEventListener('mouseleave', (e) => {
-        Object.assign(brush, { down: false })
-      })
-      painting.addEventListener('mousemove', (e) => {
-        if (!brush.down) return
-        strokes.push({ x0: brush.x, y0: brush.y, x1: e.clientX, y1: e.clientY })
-        Object.assign(brush, { x: e.clientX, y: e.clientY })
-      })
-      window.addEventListener('resize', queueResize)
-      socket.addEventListener('paint', paint)
-
-      resize()
-      setInterval(transmit, 50)
-
-      function paint(color, segments) {
-        ctx.beginPath()
-        Object.assign(ctx, { lineWidth: 10, lineCap: 'round', lineJoin: 'round', strokeStyle: color })
-        segments.forEach((segment, i) => {
-          ctx.moveTo(segment.x0, segment.y0)
-          ctx.lineTo(segment.x1, segment.y1)
-        })
-        ctx.stroke()
-      }
-
-      function queueResize() {
-        clearTimeout(resizeTimer)
-        resizeTimer = setTimeout(resize, 1000)
-      }
-
-      function resize() {
-        painting.width = window.innerWidth
-        painting.height = window.innerHeight
-        socket.emit('refresh')
-      }
-
-      function transmit() {
-        if (!strokes.length) return
-        socket.emit('strokes', strokes.splice(0))
-      }
-    </script>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  $(function () {
+    var socket = io();
+    $('form').submit(function(){
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg['message']));
+    });
+  });
+</script>
   </body>
 </html>
