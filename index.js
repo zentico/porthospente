@@ -8,15 +8,15 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/index.html')
 })
 
-app.get('/chat.js', function(req, res) {
+app.get('/pente_client.js', function(req, res) {
   res.sendFile(__dirname + '/client/pente_client.js')
 })
 
-app.get('/chat.js', function(req, res) {
+app.get('/pente.css', function(req, res) {
   res.sendFile(__dirname + '/client/pente.css')
 })
 
-app.get('/chat.js', function(req, res) {
+app.get('/reset.css', function(req, res) {
   res.sendFile(__dirname + '/client/reset.css')
 })
 
