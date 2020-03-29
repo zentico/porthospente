@@ -1,13 +1,13 @@
 {
-  "name": "porthospente",
-  "version": "0.1",
-  "description": "APente for up to 4 players, hosted on Heroku",
+  "name": "tradeandmark-chat",
+  "version": "0.2.0",
+  "description": "A simple chat app powered by Socket.IO, ready for Heroku",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "node test.js"
   },
-  "author": "Eric F",
+  "author": "tradeandmark",
   "dependencies": {
     "express": "^4.16.2",
     "socket.io": "^2.0.4",
