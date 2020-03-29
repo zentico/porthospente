@@ -3,8 +3,7 @@
 //   let socket = io.connect(url);
 // };
 
-const url = window.location.origin;
-let socket = io.connect(url);
+var socket = io();
 
 var myTurn = true,
   symbol;
