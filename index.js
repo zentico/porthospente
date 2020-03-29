@@ -12,6 +12,10 @@ app.get('/styles.css', function(req, res) {
   res.sendFile(__dirname + '/styles.css')
 })
 
+app.get('/chat.js', function(req, res) {
+  res.sendFile(__dirname + '/chat.js')
+})
+
 io.on('connection', function(socket){
   UserCheck()
   console.log('a user connected')
