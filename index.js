@@ -5,15 +5,15 @@ var io = require('socket.io')(http)
 var Colours = [], Users = [];
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/client/index.html')
 })
 
 app.get('/styles.css', function(req, res) {
-  res.sendFile(__dirname + '/styles.css')
+  res.sendFile(__dirname + '/client/styles.css')
 })
 
 app.get('/chat.js', function(req, res) {
-  res.sendFile(__dirname + '/chat.js')
+  res.sendFile(__dirname + '/client/chat.js')
 })
 
 io.on('connection', function(socket){
