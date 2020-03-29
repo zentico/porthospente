@@ -1,10 +1,7 @@
-RealTimeChat
-============
+# Tradeandmark Chat
 
-A real time group chat application, running on heroku.
-Using node.js + express + socket.io
+A simple chat app powered by Socket.IO, ready for Heroku
 
-## Build Instructions
-1. Clone the repository to your localmachine
-2. Run `npm install` to install the dependencies
-3. Run `node server.js` and the application would be running on `localhost:3000`
+## Statuses
+[![Travis CI](https://travis-ci.org/tradeandmark/chat.svg?branch=master)](https://travis-ci.org/tradeandmark/chat)
+[![Code Climate](https://codeclimate.com/github/tradeandmark/chat/badges/gpa.svg)](https://codeclimate.com/github/tradeandmark/chat)

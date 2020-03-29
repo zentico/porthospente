@@ -1,21 +1,20 @@
 {
-  "name": "RealTimeChat",
-  "version": "1.0.0",
-  "engines": {
-    "node": "12.x"
-  },
-  "description": "",
+  "name": "tradeandmark-chat",
+  "version": "0.2.0",
+  "description": "A simple chat app powered by Socket.IO, ready for Heroku",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js",
+    "test": "node test.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "tradeandmark",
   "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0"
-    "jade": "^1.11.0",
-    "mongodb": "^3.5.5",
+    "express": "^4.16.2",
+    "express3": "^0.0.0",
+    "socket.io": "^2.0.4",
+    "request": "^2.83.0"
+  },
+  "engines": {
+    "node": "10"
   }
 }
