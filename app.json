@@ -1,6 +1,22 @@
 {
-  "name": "Node.js Socket.io Example",
-  "description": "Part of the Using WebSockets on Heroku Tutorial",
-  "repository": "https://github.com/heroku-examples/node-socket.io",
-  "keywords": ["node", "websocket", "socket.io"]
+  "name": "Socket-Chat-Example",
+  "description": "my first socket.io app",
+  "website": "https://github.com/socketio/chat-example",
+  "repository": "https://github.com/socketio/chat-example",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "success_url": "/",
+  "keywords": [
+    "node",
+    "express",
+    "socket.io",
+    "realtime",
+    "websocket"
+  ],
+  "scripts": {
+  },
+  "addons": [
+  ],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs"
+  }
 }
