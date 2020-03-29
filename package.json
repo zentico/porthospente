@@ -1,6 +1,9 @@
 {
   "name": "RealTimeChat",
   "version": "0.0.1",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "Real time web chat using nodeJS, socket.io",
   "dependencies": {
     "express": "latest",
