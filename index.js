@@ -50,7 +50,7 @@ function gameState(hash) {
 ***************************/
 
 // On connection to the client
-io.sockets.on('connection', function(socket){
+io.on('connection', function(socket){
 	log('client connected');
 	// Let the client know that the server is ready
 	socket.emit('serverReady');
@@ -83,7 +83,7 @@ io.sockets.on('connection', function(socket){
 		socket.join(socket.gameCode);
 		Game.init(board.xBoardSize, board.yBoardSize, ALLGAMES[socket.gameCode]);
 		socket.emit('joinedGame', socket.gameCode);
-		io.sockets.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
+		io.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
 	});
 
 	socket.on('joinGame', function(hash){
@@ -95,7 +95,7 @@ io.sockets.on('connection', function(socket){
 			socket.join(socket.gameCode);
 			log("Sending joinedGame");
 			socket.emit('joinedGame', socket.gameCode);
-			io.sockets.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
+			io.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
 		} else {
 			log("hash doesn't exist");
 			socket.emit('doesNotExist', hash);
@@ -110,7 +110,7 @@ io.sockets.on('connection', function(socket){
 			if(socket.player === ALLGAMES[socket.gameCode].thisPlayer){
 				log('Play at '+position.xPos+", "+position.yPos);
 				Game.play(position.xPos, position.yPos, ALLGAMES[socket.gameCode]);
-				io.sockets.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
+				io.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
 			}
 		}
 	});
@@ -118,7 +118,7 @@ io.sockets.on('connection', function(socket){
 	// On request to undo
 	socket.on('undo', function(data){
 		Game.undo(ALLGAMES[socket.gameCode]);
-		io.sockets.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
+		io.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
 	});
 
 	// On request to end turn
@@ -127,7 +127,7 @@ io.sockets.on('connection', function(socket){
 			ALLGAMES[socket.gameCode].alreadyPlayed = false;
       Game.switchPlayer(ALLGAMES[socket.gameCode]);
 			Game.newTurn(ALLGAMES[socket.gameCode]);
-			io.sockets.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
+			io.in(socket.gameCode).emit('render',ALLGAMES[socket.gameCode]);
 		}
 	});
 
