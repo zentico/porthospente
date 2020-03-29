@@ -1,0 +1,70 @@
+doctype
+html
+    head
+        title= "Raven"
+        script(src = '/jquery-1.11.1.min.js', type = 'text/javascript')
+        script(src = '/chat.js', type = 'text/javascript')
+        script(src = '/socket.io/socket.io.js', type = 'text/javascript')
+        link(href = "/css/main.css", rel = "stylesheet")
+        link(href = "/css/font-awesome.min.css", rel = "stylesheet")
+        link(href = '//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Open+Sans:700,300,600,400', rel='stylesheet', type = 'text/css')
+    body
+        .credits
+        #light-box
+            h1 Raven
+            input#name(type = "text", placeholder = 'Enter Your Alias', tabindex = "1", autofocus)
+            #topic-change
+        #title Raven
+        .info-bar-back
+            .info-bar
+                #display-name
+                #topicBox
+                a#rejectButton(href="#")
+                    i.fa.fa-forward.fa-lg
+                .numDisp-icon
+                    i.fa.fa-user
+                #numDisp
+                input(type="text", id="topic-field", placeholder="Suggest a new topic")
+                button(id="send-topic")
+                    i.fa.fa-plus.fa-lg
+        #content
+            #prevMsgs
+            #newMsgs
+        #topics-list
+        .controls
+            input.field(type="text", id="field", placeholder="What's on your mind?", tabindex="2")
+            input.send(type="button", value="Send", id="send", tabindex="3")
+            .emoticons
+                #emo-smile.emo(tabindex="4")
+                    img(src="/pngs/smile.png", alt="Smile")
+                #emo-smiley.emo(tabindex="5")
+                    img(src="/pngs/smiley.png", alt="Smiley")
+                #emo-laughing.emo(tabindex="6")
+                    img(src="/pngs/laughing.png", alt="Laughing")
+                #emo-blush.emo(tabindex="7")
+                    img(src="/pngs/blush.png", alt="Blush")
+                #emo-relaxed.emo(tabindex="8")
+                    img(src="/pngs/relaxed.png", alt="Relaxed")
+                #emo-grin.emo(tabindex="9")
+                    img(src="/pngs/grin.png", alt="Grin")
+                #emo-stuck_out_tongue_winking_eye.emo(tabindex="10")
+                    img(src="/pngs/stuck_out_tongue_winking_eye.png", alt="Stuck_out_tongue_winking_eye")
+                #emo-wink.emo(tabindex="11")
+                    img(src="/pngs/wink.png", alt="Wink")
+                #emo-confused.emo(tabindex="12")
+                    img(src="/pngs/confused.png", alt="Confused")
+                #emo-sunglasses.emo(tabindex="13")
+                    img(src="/pngs/sunglasses.png", alt="Sunglasses")
+                #emo-kissing_heart.emo(tabindex="14")
+                    img(src="/pngs/kissing_heart.png", alt="kissing_heart")
+                #emo-stuck_out_tongue.emo(tabindex="15")
+                    img(src="/pngs/stuck_out_tongue.png", alt="stuck_out_tongue")
+                #emo-worried.emo(tabindex="16")
+                    img(src="/pngs/worried.png", alt="worried")
+                #emo-sleeping.emo(tabindex="17")
+                    img(src="/pngs/sleeping.png", alt="sleeping")
+                #emo-expressionless.emo(tabindex="18")
+                    img(src="/pngs/expressionless.png", alt="expressionless")
+                #emo-unamused.emo(tabindex="19")
+                    img(src="/pngs/unamused.png", alt="unamused")
+                

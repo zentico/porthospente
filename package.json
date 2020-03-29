@@ -1,12 +1,22 @@
 {
-    "name": "chat.io"
-  , "description": "example chat application with socket.io"
-  , "version": "0.0.1"
-  , "dependencies": {
-        "express": "4.17.1"
-      , "jade": "1.11.0"
-      , "stylus": "0.54.7"
-      , "nib": "1.1.2"
-      , "socket.io": "2.3.0"
-    }
+  "name": "RealTimeChat",
+  "version": "0.0.1",
+  "description": "Real time web chat using nodeJS, socket.io",
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "mongodb": "latest",
+    "socket.io": "latest"
+  },
+  "author": "aman",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amanthedorkknight/heroku"
+  }
 }
