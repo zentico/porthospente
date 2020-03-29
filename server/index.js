@@ -8,7 +8,7 @@ const fs = require('fs');
 
 const PORT = process.env.PORT || 3000;
 
-const server = http.Server(app).listen(PORT);
+const server = http.Server(app).listen(PORT, () => console.log(`Listening on ${PORT}`));
 const io = socketIo(server);
 const clients = {};
 
