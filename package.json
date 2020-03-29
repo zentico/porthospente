@@ -1,5 +1,5 @@
 {
-  "name": "tradeandmark-chat",
+  "name": "porthospente",
   "version": "0.2.0",
   "description": "A simple chat app powered by Socket.IO, ready for Heroku",
   "main": "index.js",
@@ -14,6 +14,6 @@
     "request": "^2.83.0"
   },
   "engines": {
-    "node": "10"
+    "node": "12"
   }
 }
