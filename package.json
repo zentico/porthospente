@@ -1,7 +1,7 @@
 {
   "name": "porthospente",
   "version": "0.2.0",
-  "description": "A simple chat app powered by Socket.IO, ready for Heroku",
+  "description": "Pente for up to 4 players, hosted on Heroku",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
