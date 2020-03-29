@@ -1,10 +1,14 @@
-const http = require("http"),
-  express = require("express"),
-  app = express(),
-  socketIo = require("socket.io");
-const fs = require("fs");
+'use strict';
 
-const server = http.Server(app).listen(8080);
+const http = require('http'),
+  express = require('express'),
+  app = express(),
+  socketIo = require('socket.io');
+const fs = require('fs');
+
+const PORT = process.env.PORT || 3000;
+
+const server = http.Server(app).listen(PORT);
 const io = socketIo(server);
 const clients = {};
 
