@@ -1,7 +1,7 @@
 {
   "name": "porthospente",
   "version": "0.1",
-  "description": "Pente for up to 4 players, hosted on Heroku",
+  "description": "APente for up to 4 players, hosted on Heroku",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
