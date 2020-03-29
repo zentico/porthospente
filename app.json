@@ -1,18 +1,14 @@
 {
-  "name": "tradeandmark_chat",
+  "name": "porthospente",
   "scripts": {
   },
   "env": {
     "PASS": {
       "required": true
     },
-    "TM_ISHEROKU": {
-      "required": true
-    },
     "USER": {
       "required": true
     },
-    "TM_ISHEROKUSTAGING": "yes"
   },
   "formation": {
     "web": {
